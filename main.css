@@ -62,13 +62,13 @@ form button {
 
 table {
     width: 100%;
-    font-size: 24px;
 }
 
 table th {
     border-bottom: 2px solid aquamarine;
     font-weight: bold;
     padding: 16px;
+    font-size: 24px;
 }
 
 table td {
@@ -85,14 +85,19 @@ table td img {
 .resultado{
     padding: 8px;
     font-weight: bold;
-    color: #fff;
+    color: aquamarine;
+    background-color: black;
     border-radius: 3px; /* border radius para tornar borda circular */
 }
 
 .aprovado {
+    border-radius: 3px;
     background-color: rgba(0, 255, 0, 0.694);
+    color: #fff;
 }
 
 .reprovado {
+    border-radius: 3px;
     background-color: crimson;
+    color: #fff;
 }

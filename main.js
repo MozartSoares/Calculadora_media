@@ -9,7 +9,7 @@ const notaMinima = parseFloat(prompt('Digite a nota mínima'))
 
 let linhas = '' //precisa estar no escopo global para ter seu valor resetado a cada evento do addEventListener
 
-form.addEventListener('submit', function (e) {
+form.addEventListener('submit', function(e) {
     e.preventDefault()
 
     adicionaLinha()
@@ -22,19 +22,19 @@ function adicionaLinha() {
     const inputNotaAtividade = document.getElementById('nota')
 
     if (atividades.includes(inputNomeAtividade.value)) { //includes é um atributo que retorna true ou false sobre o conteudo de uma array
-        alert(`A atividade: ${inputNomeAtividade.value} já existe`)
+        alert(`A atividade: ${inputNomeAtividade.value} já existe`);
+    } else {
+        atividades.push(inputNomeAtividade.value) //atributo push insere o conteúdo desejado na array
+        notas.push(parseFloat(inputNotaAtividade.value)) //parsefloat para tornar em type number que pode ser inteiro ou não
+    
+        let linha = '<tr>';
+        linha += `<td>${inputNomeAtividade.value}</td>`
+        linha += `<td>${inputNotaAtividade.value}</td>`
+        linha += `<td>${inputNotaAtividade.value >= 7 ? imgAprovado : imgReprovado}</td>` //operador ternário $=if :=else
+        linha += `</tr>`
+    
+        linhas += linha
     }
-
-    atividades.push(inputNomeAtividade.value) //atributo push insere o conteúdo desejado na array
-    notas.push(parseFloat(inputNotaAtividade.value)) //parsefloat para tornar em type number que pode ser inteiro ou não
-
-    let linha = '<tr>';
-    linha += `<td>${inputNomeAtividade.value}</td>`
-    linha += `<td>${inputNotaAtividade.value}</td>`
-    linha += `<td>${inputNotaAtividade.value >= 7 ? imgAprovado : imgReprovado}</td>` //operador ternário $=if :=else
-    linha += `</tr>`
-
-    linhas += linha
 
     inputNomeAtividade.value = ''
     inputNotaAtividade.value = ''
